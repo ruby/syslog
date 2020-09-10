@@ -1,8 +1,9 @@
 # Syslog
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/syslog`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A Simple wrapper for the UNIX syslog system calls that might be handy
+if you're writing a server in Ruby.  For the details of the syslog(8)
+architecture and constants, see the syslog(3) manual page of your
+platform.
 
 ## Installation
 
@@ -22,7 +23,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+Syslog.open("webrick", Syslog::LOG_PID,
+            Syslog::LOG_DAEMON | Syslog::LOG_LOCAL3)
+```
 
 ## Development
 
@@ -32,5 +36,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/hsbt/syslog.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ruby/syslog.
 
