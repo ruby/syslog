@@ -8,5 +8,7 @@ Rake::TestTask.new(:test) do |t|
 end
 
 require 'rake/extensiontask'
-Rake::ExtensionTask.new("syslog")
+Rake::ExtensionTask.new("syslog_ext") do |ext|
+  ext.ext_dir = 'ext/syslog'
+end
 task :default => :test
