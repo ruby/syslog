@@ -415,7 +415,7 @@ static VALUE mSyslogMacros_included(VALUE mod, VALUE target)
  *
  * The syslog protocol is standardized in RFC 5424.
  */
-void Init_syslog(void)
+void Init_syslog_ext(void)
 {
 #undef rb_intern
     mSyslog = rb_define_module("Syslog");
