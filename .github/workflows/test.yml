@@ -9,6 +9,10 @@ jobs:
       matrix:
         ruby: [ 2.7, 2.6, 2.5, head ]
         os: [ ubuntu-latest, macos-latest ]
+        exclude:
+          - { os: macos-latest, ruby: '2.5' }
+        include:
+          - { os: macos-13, ruby: '2.5' }
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v4
