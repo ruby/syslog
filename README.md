@@ -24,6 +24,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
+require "syslog"
 Syslog.open("webrick", Syslog::LOG_PID,
             Syslog::LOG_DAEMON | Syslog::LOG_LOCAL3)
 ```
