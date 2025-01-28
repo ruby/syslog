@@ -11,7 +11,7 @@ def generate_dummy_makefile
 end
 
 def windows?
-  RbConfig::CONFIG["host_os"] =~ /mswin|mingw|cygwin/
+  RbConfig::CONFIG["host_os"] =~ /mswin|mingw/
 end
 
 if windows?
