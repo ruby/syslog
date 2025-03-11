@@ -23,4 +23,6 @@ Gem::Specification.new do |spec|
   end
   spec.extensions    = ["ext/syslog/extconf.rb"]
   spec.require_paths = ["lib"]
+
+  spec.add_dependency "logger"
 end
