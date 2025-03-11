@@ -12,7 +12,7 @@
 #include "ruby/util.h"
 #include <syslog.h>
 
-#define SYSLOG_VERSION "0.2.0"
+#define SYSLOG_VERSION "0.3.0"
 
 /* Syslog class */
 static VALUE mSyslog;
