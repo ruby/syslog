@@ -117,6 +117,7 @@ class TestSyslog < Test::Unit::TestCase
   end
 
   def test_log
+    pend("fork not supported") unless Process.respond_to?(:fork)
     IO.pipe {|stderr|
       pid = fork {
         stderr[0].close

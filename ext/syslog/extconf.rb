@@ -14,7 +14,7 @@ def windows?
   RbConfig::CONFIG["host_os"] =~ /mswin|mingw/
 end
 
-if windows?
+if windows? || RUBY_ENGINE == 'jruby'
   generate_dummy_makefile
 else
   have_library("log") # for Android
