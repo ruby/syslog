@@ -117,6 +117,7 @@ class TestSyslog < Test::Unit::TestCase
   end
 
   def test_log
+    return unless Process.respond_to?(:fork)
     IO.pipe {|stderr|
       pid = fork {
         stderr[0].close
