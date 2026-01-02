@@ -6,18 +6,21 @@ jobs:
   ruby-versions:
     uses: ruby/actions/.github/workflows/ruby_versions.yml@master
     with:
-      engine: cruby
+      engine: cruby-truffleruby
       min_version: 2.5
 
   build:
     needs: ruby-versions
     name: build (${{ matrix.ruby }} / ${{ matrix.os }})
     strategy:
+      fail-fast: false
       matrix:
         ruby: ${{ fromJson(needs.ruby-versions.outputs.versions) }}
         os: [ ubuntu-latest, macos-latest, windows-latest ]
         exclude:
           - { os: macos-latest, ruby: '2.5' }
+          - { os: windows-latest, ruby: 'truffleruby' }
+          - { os: windows-latest, ruby: 'truffleruby-head' }
         include:
           - { os: macos-15-intel, ruby: '2.5' }
           - { os: macos-15-intel, ruby: '3.4' }
